@@ -1,7 +1,7 @@
 {
-  "name": "medusa-payment-paytm",
+  "name": "medusa-4g12hs",
   "version": "1.0.0",
-  "description": "This Plugin enables to use Paytm Payment gateway solution in medusa website to simplify payment from customers. Customers can choose to pay from any credit/debit card, UPI, Netbanking, Paytm Wallet and EMI.",
+  "description": "This Plugin enables to use 4g12hs Payment gateway solution in medusa website to simplify payment from customers. Customers can choose to pay from any credit/debit card, UPI, Netbanking, Paytm Wallet and EMI.",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
@@ -50,10 +50,9 @@
     "axios": "^1.1.3",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.18.2",
     "medusa-core-utils": "^1.1.33",
-    "paytm-pg-node-sdk": "^1.0.4",
-    "paytmchecksum": "^1.5.0",
     "typeorm": "^0.2.41"
   }
 }

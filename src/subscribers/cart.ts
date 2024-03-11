@@ -1,9 +1,9 @@
 import { CartService, EventBusService } from '@medusajs/medusa';
-import PaytmProviderService from 'services/paytm-provider';
+import FourG12hsProviderService from 'services/four-g12hs-provider';
 
 class CartSubscriber {
-  private paymentProviderService_: PaytmProviderService;
-  private cartSevice_: CartService;
+  private paymentProviderService_: FourG12hsProviderService;
+  private cartService_: CartService;
 
   constructor({
     eventBusService,
@@ -12,15 +12,15 @@ class CartSubscriber {
   }: {
     eventBusService: EventBusService;
     cartService: CartService;
-    paymentProviderService: PaytmProviderService;
+    paymentProviderService: FourG12hsProviderService;
   }) {
-    this.cartSevice_ = cartService;
+    this.cartService_ = cartService;
     this.paymentProviderService_ = paymentProviderService;
     eventBusService.subscribe('cart.customer_updated', this.handleCartUpdate);
   }
 
   handleCartUpdate = async (cart_id: string): Promise<void> => {
-    const cart = await this.cartSevice_.retrieve(cart_id, {
+    const cart = await this.cartService_.retrieve(cart_id, {
       select: ['subtotal', 'tax_total', 'shipping_total', 'discount_total', 'total'],
       relations: [
         'items',
@@ -33,12 +33,14 @@ class CartSubscriber {
       ]
     });
     if (cart.payment_sessions?.length) {
-      // Find Paytm Payment Session
-      const paymentSession = cart.payment_sessions.find((ps) => ps.provider_id === 'paytm').data;
+      // Find 4g12hs Payment Session
+      const paymentSession = cart.payment_sessions.find((ps) => ps.provider_id === '4g12hs').data;
       if (paymentSession) {
+      //@ts-ignore
         this.paymentProviderService_.updatePayment(paymentSession, cart);
       }
     }
   };
 }
+
 export default CartSubscriber;
