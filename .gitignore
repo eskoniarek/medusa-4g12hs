@@ -16,7 +16,8 @@ subscribers/
 migrations/
 loaders/
 index.*
-
+dev_4g12hs_eng.*
+docs.md
 !src/**
 
 ./tsconfig.tsbuildinfo
