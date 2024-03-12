@@ -5,7 +5,7 @@ Add 4g12hs as a Payment Provider.
 
 ## About
 ### Description
-This Plugin enables to use 4g12hs Payment gateway solution in medusa website to simplify payment from customers. Customers can choose to pay from any credit/debit card, UPI, Netbanking, Paytm Wallet and EMI.
+This Plugin enables to use 4g12hs Payment gateway solution in medusa website to simplify payment from customers. Customers can choose to pay from any credit/debit card, UPI, Netbanking, 4g12hs Wallet and EMI.
 
 
 
