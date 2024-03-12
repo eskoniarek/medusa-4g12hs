@@ -27,8 +27,9 @@ This Plugin enables to use 4g12hs Payment gateway solution in medusa website to 
   {
     resolve: `medusa-payment-4g12hs`,
     options: {
-      "merchant_id": "<PAYTM Merchant ID>",
-      "merchant_key": "<PAYTM Merchant KEY>",
+      "merchant_id": "<4g12hs Merchant ID>",
+      "merchant_key_1": "<4g12hs Merchant KEY 1>",
+      "merchant_key_2": "<4g12hs Merchant KEY 2>",
       "test_mode": "<true or false>", // Optional (Default to false)
       "callback_url": "<Webhook URL>", // Payment Notifcation URL
     },
